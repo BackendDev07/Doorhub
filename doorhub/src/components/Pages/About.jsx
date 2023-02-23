@@ -1,10 +1,10 @@
 import React from 'react'
 import Page from '../Page/Page'
 
-function Contact() {
+function About() {
   return (
-    <Page>Contact</Page>
+    <Page>About</Page>
   )
 }
 
-export default Contact
+export default About

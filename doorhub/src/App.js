@@ -9,7 +9,7 @@ function App() {
         {
           routes.map((item) => (
             <Route
-            key={item.key}
+            key={item.id}
             path={item.path}
             element={item.component}
             />
