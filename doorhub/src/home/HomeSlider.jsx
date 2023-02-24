@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useLoaderData } from 'react-router-dom'
 import styled from 'styled-components'
 import { Box } from '../components/Footer'
 import { Container } from '../components/Header'
+import LoadingPage from '../components/Pages/LoadingPage'
 import { H1 } from './HomeHead'
-
+import "swiper/css";
+import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 function HomeSlider() {
-    const products = [
+    const { isLoading } = useState(false)
+    const categories = [
         {
             id: 1,
             img: 'https://static.vecteezy.com/system/resources/thumbnails/009/582/946/small/pizza-fast-food-illustration-png.png',
@@ -41,40 +46,42 @@ function HomeSlider() {
             img: 'https://static.vecteezy.com/system/resources/thumbnails/009/582/946/small/pizza-fast-food-illustration-png.png',
             name: 'XACHEPURI',
         },
-        // {
-        //     id: 9,
-        //     img: 'https://static.vecteezy.com/system/resources/thumbnails/009/582/946/small/pizza-fast-food-illustration-png.png',
-        //     name: 'LAVASH',
-        // },
-        // {
-        //     id: 10,
-        //     img: 'https://static.vecteezy.com/system/resources/thumbnails/009/582/946/small/pizza-fast-food-illustration-png.png',
-        //     name: 'SHAVERMA',
-        // },
-        // {
-        //     id: 11,
-        //     img: 'https://static.vecteezy.com/system/resources/thumbnails/009/582/946/small/pizza-fast-food-illustration-png.png',
-        //     name: 'XINKALLI',
-        // },
-        // {
-        //     id: 12,
-        //     img: 'https://static.vecteezy.com/system/resources/thumbnails/009/582/946/small/pizza-fast-food-illustration-png.png',
-        //     name: 'SOUP',
-        // },
-        // {
-        //     id: 13,
-        //     img: 'https://static.vecteezy.com/system/resources/thumbnails/009/582/946/small/pizza-fast-food-illustration-png.png',
-        //     name: 'CHIPS',
-        // },
-        // {
-        //     id: 14,
-        //     img: 'https://static.vecteezy.com/system/resources/thumbnails/009/582/946/small/pizza-fast-food-illustration-png.png',
-        //     name: 'SOUSES',
-        // },
+        {
+            id: 9,
+            img: 'https://static.vecteezy.com/system/resources/thumbnails/009/582/946/small/pizza-fast-food-illustration-png.png',
+            name: 'LAVASH',
+        },
+        {
+            id: 10,
+            img: 'https://static.vecteezy.com/system/resources/thumbnails/009/582/946/small/pizza-fast-food-illustration-png.png',
+            name: 'SHAVERMA',
+        },
+        {
+            id: 11,
+            img: 'https://static.vecteezy.com/system/resources/thumbnails/009/582/946/small/pizza-fast-food-illustration-png.png',
+            name: 'XINKALLI',
+        },
+        {
+            id: 12,
+            img: 'https://static.vecteezy.com/system/resources/thumbnails/009/582/946/small/pizza-fast-food-illustration-png.png',
+            name: 'SOUP',
+        },
+        {
+            id: 13,
+            img: 'https://static.vecteezy.com/system/resources/thumbnails/009/582/946/small/pizza-fast-food-illustration-png.png',
+            name: 'CHIPS',
+        },
+        {
+            id: 14,
+            img: 'https://static.vecteezy.com/system/resources/thumbnails/009/582/946/small/pizza-fast-food-illustration-png.png',
+            name: 'SOUSES',
+        },
     ]
   return (
     <div>
-        <SlideTop>
+        {
+            isLoading ? <LoadingPage/> : 
+            <SlideTop>
             <Container>
                 <SlideBoxes>
                     <SlideBox>
@@ -82,11 +89,43 @@ function HomeSlider() {
                         <SlideText>Welcome to The Boggest Network of Food Ordering & Delivery</SlideText>
                     </SlideBox>
                     <SlideDiv>
-                        <Box>
+                        <Swiper
+                        slidesPerView={1}
+                        spaceBetween={10}
+                        modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+                        pagination={true}
+                        breakpoints={{
+                            640: {
+                              slidesPerView: 2,
+                            //   spaceBetween: 20,
+                            },
+                            768: {
+                              slidesPerView: 4,
+                            //   spaceBetween: 40,
+                            },
+                            1024: {
+                              slidesPerView: 7,
+                            //   spaceBetween: 50,
+                            },
+                          }}
+                        //   modules={[Pagination]}
+                          className="mySwiper"
+                        >
+                        <Box style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'space-evenly',
+                            // gap: 5,
+                            marginBottom: 20
+                        }}>
                             {
-                                products.map((item) => (
-                                    <SlideCards key={item.id} style={{
-                                        width: 150,
+                                categories.map((item) => (
+                                   <SwiperSlide style={{
+                                    width: 200,
+                                    padding: '10px 0'
+                                   }}>
+                                     <SlideCards key={item.id} style={{
+                                        width: 140,
                                     }}>
                                         <img src={`${item.img}`} style={{
                                             width: 60,
@@ -99,37 +138,45 @@ function HomeSlider() {
                                         <h3 style={{
                                             fontSize: 12,
                                             fontWeight: 500,
-                                            marginTop: 10
+                                            marginTop: 10,
+                                            marginBottom: 10
                                         }}>{item.name}</h3>
                                     </SlideCards>
+                                   </SwiperSlide>
                                 ))
                             }
                         </Box>
+                        </Swiper>
                     </SlideDiv>
                 </SlideBoxes>
             </Container>
         </SlideTop>
+        }
     </div>
   )
 }
 
 export default HomeSlider
 
-const SlideTop = styled.div``
-const SlideBoxes = styled.div``
-const SlideName = styled.h1`
+const SlideTop = styled.div`
+margin-bottom: 150px;
+`
+export const SlideBoxes = styled.div`
+margin-bottom: 50px;
+`
+export const SlideName = styled.h1`
 width: 600px;
 display: block;
 text-align: center;
 font-size: 50px;
 `
-const SlideText = styled.span`
+export const SlideText = styled.span`
 color: grey;
 font-size: 15px;
 margin-bottom: 20px;
 margin-top: 20px;
 `
-const SlideBox = styled.div`
+export const SlideBox = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -145,14 +192,14 @@ const SlideCards = styled.div`
     align-items: center;
     flex-direction: column;
     box-shadow: 2px 4px 5px #0f0e0e98;
-    padding: 20px 10px;
+    padding: 45px 10px;
     border-radius: 20px;
     font-weight: 600;
     cursor: pointer;
+    padding-bottom: 20px;
     &:hover{
         transition: all 0.7s ease;
         background-color: #0000ffab;
-        margin-bottom: 40px;
         color: #fff;
     }
 `

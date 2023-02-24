@@ -53,6 +53,7 @@ const HomeBoxes = styled.div`
    display: flex;
    align-items: center;
    justify-content: space-between;
+   margin-bottom: 150px;
 `
 
 export const Div = styled.div`
