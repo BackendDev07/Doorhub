@@ -191,7 +191,7 @@ const SlideCards = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    box-shadow: 2px 4px 5px #0f0e0e98;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 45px 10px;
     border-radius: 20px;
     font-weight: 600;

@@ -32,7 +32,7 @@ function HomeHead() {
                     </Div>
                 </HomeBox>
                 <HomeBox>
-                    <Img src={HeadImg}/>
+                    <Img   src={HeadImg}/>
                 </HomeBox>
             </HomeBoxes>
         </Container>
