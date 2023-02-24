@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Box } from '../components/Footer'
 import { Container } from '../components/Header'
 import { SlideBox, SlideBoxes, SlideName, SlideText } from './HomeSlider'
+import AddIcon from '../components/assets/icons/AddIcon'
 
 function HomeAdd() {
     const products = [
@@ -76,13 +77,22 @@ function HomeAdd() {
                                             fontWeight: 500,
                                             marginBottom: 10
                                         }}> {item.name} </h1>
-                                        <Box>
+                                        <Box style={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'space-between'
+                                        }}>
                                             <h1 style={{
                                             fontSize: 20,
                                             fontWeight: 600
                                         }}> ${item.bill} </h1>
-                                            <AddBtn>
-                                                {item.icon}
+                                            <AddBtn style={{
+                                                padding: 5,
+                                                backgroundColor: '#0000ff88',
+                                                borderRadius: 5
+                                            }}>
+                                                {/* {item.icon} */}
+                                                <AddIcon/>
                                             </AddBtn>
                                         </Box>
                                     </AddBox>
@@ -128,5 +138,8 @@ export const Img = styled.img`
 `
 
 const AddBtn = styled.button`
-    
+border: none;
+background-color: inherit;
+cursor: pointer;
+
 `

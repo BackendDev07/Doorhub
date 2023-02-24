@@ -120,7 +120,6 @@ const FootBoxes = styled.div`
   justify-content: space-between;
 `
 const FootBox = styled.div`
-  
 `
 
 export const P = styled.p`
