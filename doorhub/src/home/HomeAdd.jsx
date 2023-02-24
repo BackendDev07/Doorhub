@@ -106,7 +106,7 @@ const AddBox = styled.div`
     display: block;
     text-align: center;
     padding: 20px;
-    border: 1px solid #8bd4e8b2;
+    border: 1px solid #0000ff88;
     border-radius: 30px;
     margin: 20px;
     cursor: pointer;
