@@ -53,3 +53,7 @@ padding: 10px 0;
 border: 1px solid blue;
 border-radius: 6px;
 `
+
+const ContactTop = styled.div`
+  
+`
