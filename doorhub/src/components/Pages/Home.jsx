@@ -1,4 +1,5 @@
 import React from 'react'
+import HeadMain from '../../home/HeadMain'
 import HomeAdd from '../../home/HomeAdd'
 import HomeHead from '../../home/HomeHead'
 import HomeSlider from '../../home/HomeSlider'
@@ -10,6 +11,7 @@ function Home() {
       <HomeHead/>
       <HomeSlider/>
       <HomeAdd/>
+      <HeadMain/>
     </Page>
   )
 }

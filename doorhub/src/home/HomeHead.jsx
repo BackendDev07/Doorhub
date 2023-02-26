@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Container, Span } from '../components/Header'
-import HeadImg from '../components/assets/images/order-img.png'
+import HeadImg from '../components/assets/images/order-img.jpg'
 import { Box } from '../components/Footer'
 import RightIcon from '../components/assets/icons/RightIcon'
 
@@ -62,7 +62,10 @@ export const Div = styled.div`
 `
 
 export const H1 = styled.h1``
-const Img = styled.img``
+const Img = styled.img`
+height: 550px;
+width: 550px;
+`
 const HeadSpan = styled.span`
 color: grey;
 padding: 20px 0;

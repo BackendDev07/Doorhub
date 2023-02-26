@@ -3,6 +3,7 @@ import Contact from "../components/Pages/Contact";
 import Blog from "../components/Pages/Blog";
 import About from "../components/Pages/About";
 import Features from "../components/Pages/Features";
+import ProductPage from "../components/Pages/ProductPage";
 
 export const routes = [
     {
@@ -29,5 +30,10 @@ export const routes = [
         id: 5,
         path: '/features',
         component: <Features />,
+    },
+    {
+        id: 6,
+        path: '/product',
+        component: <ProductPage />,
     },
 ]

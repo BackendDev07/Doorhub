@@ -163,7 +163,7 @@ const FootButton = styled.button`
   &:hover{
     transition: all 0.5s ease;
     background-color: blue;
-    svg {
+    svg,path {
           stroke: #fff;
           fill: #fff;
         }

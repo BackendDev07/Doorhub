@@ -4,8 +4,13 @@ import { Box } from '../components/Footer'
 import { Container } from '../components/Header'
 import { SlideBox, SlideBoxes, SlideName, SlideText } from './HomeSlider'
 import AddIcon from '../components/assets/icons/AddIcon'
+import { useNavigate } from 'react-router-dom'
 
 function HomeAdd() {
+    const navigate = useNavigate()
+    const handlePro = () => {
+        navigate('/product')
+    }
     const products = [
         {
             id: 1,
@@ -68,7 +73,7 @@ function HomeAdd() {
                     <AddBoxes>
                             {
                                 products.map((item) => (
-                                    <AddBox key={item.id}>
+                                    <AddBox onClick={handlePro}  key={item.id}>
                                         <Img style={{
                                             padding: '50px 20px',
                                         }} src={`${item.img}`} />
@@ -86,14 +91,9 @@ function HomeAdd() {
                                             fontSize: 20,
                                             fontWeight: 600
                                         }}> ${item.bill} </h1>
-                                            <AddBtn style={{
-                                                padding: 5,
-                                                backgroundColor: '#0000ff88',
-                                                borderRadius: 5
-                                            }}>
-                                                {/* {item.icon} */}
+                                            <button>
                                                 <AddIcon/>
-                                            </AddBtn>
+                                            </button>
                                         </Box>
                                     </AddBox>
                                 ))
@@ -120,11 +120,28 @@ const AddBox = styled.div`
     border-radius: 30px;
     margin: 20px;
     cursor: pointer;
+    button{
+        background-color: #0000ff88;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+    }
     &:hover{
         transition: all 0.5s ease;
         background-color: #0000ff88;
         color: aliceblue;
+
+        button{
+            transition: all 0.5s ease-out;
+            background-color: #fff;
+        }
+        svg,path{
+            fill: #0000ff88;
+            stroke: #0000ff88;
+        }
     }
+
 `
 const AddBoxes = styled.div`
     display: flex;
@@ -135,11 +152,4 @@ const AddBoxes = styled.div`
 
 export const Img = styled.img`
     
-`
-
-const AddBtn = styled.button`
-border: none;
-background-color: inherit;
-cursor: pointer;
-
 `
