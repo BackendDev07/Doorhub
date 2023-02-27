@@ -1,9 +1,14 @@
 import React from 'react'
+import { Container } from '../Header'
 import Page from '../Page/Page'
 
 function About() {
   return (
-    <Page>About</Page>
+    <Page>
+      <Container>
+      About
+      </Container>
+    </Page>
   )
 }
 

@@ -120,7 +120,7 @@ function HomeSlider() {
                                 categories.map((item) => (
                                    <SwiperSlide style={{
                                     width: 200,
-                                    padding: '10px 0'
+                                    padding: '10px 5px'
                                    }}>
                                      <SlideCards key={item.id} style={{
                                         width: 140,
