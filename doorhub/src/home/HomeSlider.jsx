@@ -92,23 +92,21 @@ function HomeSlider() {
                         <Swiper
                         slidesPerView={1}
                         spaceBetween={10}
-                        modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+                        navigation={true}
+                        loop={true}
                         pagination={true}
                         breakpoints={{
                             640: {
                               slidesPerView: 2,
-                            //   spaceBetween: 20,
                             },
                             768: {
                               slidesPerView: 4,
-                            //   spaceBetween: 40,
                             },
                             1024: {
                               slidesPerView: 7,
-                            //   spaceBetween: 50,
                             },
                           }}
-                        //   modules={[Pagination]}
+                          modules={[Pagination]}
                           className="mySwiper"
                         >
                         <Box style={{
