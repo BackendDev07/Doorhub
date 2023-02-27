@@ -1,7 +1,6 @@
-import { Input, Form, Button } from 'antd'
+import { Input } from 'antd'
 import React from 'react'
 import styled from 'styled-components'
-import { Div, H1 } from '../../home/HomeHead'
 import { Container } from '../Header'
 import Page from '../Page/Page'
 
@@ -9,37 +8,20 @@ function Contact() {
   return (
     <Page>
       <ContactTop>
-      <Container>
-        <Div>
-          <H1 style={{
-            marginBottom: 20,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontWeight: 500
-          }}>Registration</H1>
-          <Div>
-          <Form.Item
-      label="Email"
-      name="email"
-    >
-      <Input />
-    </Form.Item>
-
-    <Form.Item
-      label="Password"
-      name="password"
-    >
-      <Input.Password  />
-    </Form.Item>
-          </Div>
-          <ContactBtn style={{
-            width :'20%',
-          }}>
-            <span>Submit</span>
-          </ContactBtn>
-        </Div>
-      </Container>
+        <Container>
+          <ContactBox>
+            <ContactH1>Registration</ContactH1>
+          <Input style={{
+              width: '40%'
+            }}/>
+            <Input.Password style={{
+              width: '40%'
+            }}/>
+            <SubmitBtn type='primary' htmlType='submit'>
+              <span>Submit</span>
+            </SubmitBtn>
+          </ContactBox>
+        </Container>
       </ContactTop>
     </Page>
   )
@@ -47,13 +29,37 @@ function Contact() {
 
 export default Contact
 
-const ContactBtn = styled.button`
-cursor: pointer;
-padding: 10px 0;
+const ContactTop = styled.div`
+min-height: 90vh;
+display: flex;
+align-items: center;
+justify-content: center;
+`
+const ContactBox = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 180px;
+flex-direction: column;
+gap: 20px;
+`
+const SubmitBtn = styled.div`
+padding: 10px;
+border-radius: 10px;
 border: 1px solid blue;
-border-radius: 6px;
+cursor: pointer;
+width: 20%;
+display: flex;
+align-items: center;
+justify-content: center;
+&:hover{
+  transition: all 0.5s ease;
+  background-color: blue;
+  color: aliceblue;
+}
 `
 
-const ContactTop = styled.div`
-  
+const ContactH1 = styled.h1`
+  font-size: 40px;
+  font-weight: 500;
 `

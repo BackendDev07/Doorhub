@@ -47,6 +47,9 @@ const HomeBox = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media screen and (max-width: 1100px){
+        flex-direction: column;
+    }
 `
 const HomeBoxes = styled.div`
    padding:  50px 0;
@@ -54,6 +57,9 @@ const HomeBoxes = styled.div`
    align-items: center;
    justify-content: space-between;
    margin-bottom: 150px;
+   @media screen and (max-width: 1100px){
+        flex-direction: column;
+    }
 `
 
 export const Div = styled.div`

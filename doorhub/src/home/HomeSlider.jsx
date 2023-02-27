@@ -93,7 +93,6 @@ function HomeSlider() {
                         slidesPerView={1}
                         spaceBetween={10}
                         navigation={true}
-                        loop={true}
                         pagination={true}
                         breakpoints={{
                             640: {
@@ -108,12 +107,16 @@ function HomeSlider() {
                           }}
                           modules={[Pagination]}
                           className="mySwiper"
+                          style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                          }}
                         >
                         <Box style={{
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'space-evenly',
-                            // gap: 5,
                             marginBottom: 20
                         }}>
                             {

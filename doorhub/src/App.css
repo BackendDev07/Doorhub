@@ -26,9 +26,3 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 
-.swiper-button-prev {
-  position: absolute;
-  width: 40px;
-  height: 100vh;
-  background-color: black;
-}
