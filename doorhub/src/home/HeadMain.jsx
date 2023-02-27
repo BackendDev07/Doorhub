@@ -6,9 +6,15 @@ import { H1 } from './HomeHead'
 import ImgOne from '../components/assets/images/ponchik.jpg'
 import ImgTwo from '../components/assets/images/burger.jpg'
 import ImgThree from '../components/assets/images/lemons.jpg'
-import { Button } from 'antd'
+import Top from '../components/assets/icons/Top'
+import Right from '../components/assets/icons/Right'
+import { useNavigate } from 'react-router-dom'
 
 function HeadMain() {
+    const navigate = useNavigate()
+    const handlePro = () => {
+        navigate('/product')
+    }
   return (
     <div>
         <Container>
@@ -19,7 +25,10 @@ function HeadMain() {
                         
                     }}>Articels and useful tips</H1>
                     <ProSpan>Lorem ipsum dolor sit amet  accusamus possimus placeat aspernatur veritatis, ea dolores veniam provident, qui necessitatibus aut eveniet ipsa, minus debitis fuga! Laborum?</ProSpan>
-                </MainCenter>
+                    <ReadBnt onClick={handlePro}>
+                    <span>Read more</span>
+                    <Right/>    
+                </ReadBnt></MainCenter>
             <MainBoxes>
                 <MainBox>
                     <Img style={{
@@ -39,7 +48,11 @@ function HeadMain() {
                     lineHeight: 1.5,
                     marginBottom: 20,
                 }}> Lorem ipsum Debitis nam  saepe nisi officia optio illo, maxime error similique necessitatibus nostrum praesentium itaque ipsam dolores esse quas. </Span>
-                </MainBox>
+                
+                <ReadBnt onClick={handlePro}>
+                    <span>Read more</span>
+                    <Top/>
+                </ReadBnt></MainBox>
                 <MainBox>
                 <Img style={{
                         width: 350,
@@ -58,7 +71,10 @@ function HeadMain() {
                     fontSize: 15,
                     lineHeight: 1.5
                 }}> Lorem ipsum Debitis nam  saepe nisi officia optio illo, maxime error similique necessitatibus nostrum praesentium itaque ipsam dolores esse quas. </Span>
-                </MainBox>
+                <ReadBnt onClick={handlePro}>
+                    <span>Read more</span>
+                    <Top/>
+                </ReadBnt></MainBox>
                 <MainBox>
                 <Img style={{
                         width: 350,
@@ -77,6 +93,10 @@ function HeadMain() {
                     fontSize: 15,
                     lineHeight: 1.5
                 }}> Lorem ipsum Debitis nam  saepe nisi officia optio illo, maxime error similique necessitatibus nostrum praesentium itaque ipsam dolores esse quas. </Span>
+                <ReadBnt>
+                    <span>Read more</span>
+                    <Top/>
+                </ReadBnt>
                 </MainBox>
             </MainBoxes>
         </Container>
@@ -109,4 +129,13 @@ const MainBox = styled.div`
     display: flex;
     align-items: start;
     flex-direction: column;
+`
+
+const ReadBnt = styled.div`
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 15px;
+    margin-bottom: 50px;
 `
